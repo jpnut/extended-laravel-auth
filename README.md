@@ -67,6 +67,11 @@ To enable the guard, you will need to modify `config/auth.php` as follows:
 
 You should also make sure that the guard is defined on the routes where you wish to make use of this guard. For most cases this involves changing the default guard to `extended-web`. Note that `extended-session` and `extended-eloquent` can be modified in the `config/extended-auth` file.
 
+Certain other areas of the default Laravel framework also rely upon features which have been changed in this package:
+
+- During testing, you should override `Illuminate\Foundation\Testing\TestCase` with `JPNut\ExtendedAuth\Testing\TestCase`
+- For password resets, you should replace `Illuminate\Foundation\Auth\ResetsPasswords` with `JPNut\ExtendedAuth\ResetsPasswords`
+
 ## Extending
 
 You need to make sure: 
