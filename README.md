@@ -71,8 +71,8 @@ You should also make sure that the guard is defined on the routes where you wish
 
 You need to make sure: 
 
-- Any `User` model(s) implement "JPNut\ExtendedAuth\Contracts\Authenticatable"
-- Your `Token` model implements "JPNut\ExtendedAuth\Contracts\Tokenable"
+- Any `User` model(s) implement `JPNut\ExtendedAuth\Contracts\Authenticatable`
+- Your `Token` model implements `JPNut\ExtendedAuth\Contracts\Tokenable`
 
 ## Testing
 
