@@ -47,7 +47,7 @@ class AuthServiceProvider extends ServiceProvider
             return new EloquentUserProvider($app['hash'], $config['model']);
         });
 
-        Auth::extend(config('extended-auth.guard'), function ($app, $name, array $config) {
+        Auth::extend(config('extended-auth.session-guard'), function ($app, $name, array $config) {
             $guard =  new SessionGuard(
                 $name,
                 Auth::createUserProvider($config['provider'] ?? null),
@@ -66,6 +66,15 @@ class AuthServiceProvider extends ServiceProvider
             if (method_exists($guard, 'setRequest')) {
                 $guard->setRequest($this->app->refresh('request', $guard, 'setRequest'));
             }
+
+            return $guard;
+        });
+
+        Auth::extend(config('extended-auth.token-guard'), function ($app, $name, array $config) {
+            $guard =  new TokenGuard(
+                Auth::createUserProvider($config['provider'] ?? null),
+                $app['request']
+            );
 
             return $guard;
         });

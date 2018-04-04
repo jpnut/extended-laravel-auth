@@ -14,8 +14,14 @@ return [
 	'provider' => 'extended-eloquent',
 
 	/**
-	 * The name of the guard driver in this package. For any auth configurations which utilise
+	 * The name of the session guard driver in this package. For any session auth configurations which utilise
 	 * this package, one should reference this value as the "guard->driver"
 	 */
-	'guard' => 'extended-session',
+	'session-guard' => 'extended-session',
+
+	/**
+	 * The name of the token guard driver in this package. For any token auth configurations which utilise
+	 * this package, one should reference this value as the "guard->driver"
+	 */
+	'token-guard' => 'extended-token',
 ];
