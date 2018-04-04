@@ -3,11 +3,12 @@
 namespace JPNut\ExtendedAuth\Passwords;
 
 use Closure;
-use Illuminate\Support\Arr;
-use UnexpectedValueException;
-use JPNut\ExtendedAuth\Contracts\UserProvider;
-use Illuminate\Contracts\Auth\PasswordBroker as PasswordBrokerContract;
+use Illuminate\Auth\Passwords\TokenRepositoryInterface;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Contracts\Auth\PasswordBroker as PasswordBrokerContract;
+use Illuminate\Support\Arr;
+use JPNut\ExtendedAuth\Contracts\UserProvider;
+use UnexpectedValueException;
 
 class PasswordBroker implements PasswordBrokerContract
 {

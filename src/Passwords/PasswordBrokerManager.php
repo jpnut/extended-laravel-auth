@@ -2,9 +2,10 @@
 
 namespace JPNut\ExtendedAuth\Passwords;
 
+use Illuminate\Auth\Passwords\DatabaseTokenRepository;
+use Illuminate\Contracts\Auth\PasswordBrokerFactory as FactoryContract;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use Illuminate\Contracts\Auth\PasswordBrokerFactory as FactoryContract;
 
 /**
  * @mixin \Illuminate\Contracts\Auth\PasswordBroker
