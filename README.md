@@ -47,14 +47,14 @@ To enable the guard, you will need to modify `config/auth.php` as follows:
 
 ```php
 ...
-	'guards' => [
+    'guards' => [
         'extended-web' => [
             'driver' => 'extended-session',
             'provider' => 'extended-users',
         ],
     ],
 ...
-	'extended-users' => [
+    'extended-users' => [
         'driver' => 'extended-eloquent',
         'model' => JPNut\ExtendedAuth\User::class,
     ],

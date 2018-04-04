@@ -1,6 +1,12 @@
 {
     "name": "jpnut/extended-laravel-auth",
     "description": "Extended Authentication implmentation for Laravel",
+    "keywords": [
+        "laravel",
+        "authentication",
+        "remember me"
+    ],
+    "homepage": "https://github.com/jpnut/extended-laravel-auth",
     "license": "MIT",
     "authors": [
         {
