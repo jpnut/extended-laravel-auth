@@ -8,7 +8,11 @@ This process also has the added advantage of enabling an application to invalida
 
 ## Installation
 
-TODO
+You can install the package with composer:
+
+```bash
+composer require jpnut/extended-laravel-auth
+```
 
 You can publish the migration with:
 
@@ -16,7 +20,7 @@ You can publish the migration with:
 php artisan vendor:publish --provider="JPNut\ExtendedAuth\AuthServiceProvider" --tag="migrations"
 ```
 
-One should note that the removal of the "remember_token" field in the users table is not currently handled by this package. After the migration has been published you can create the token table by running the migrations:
+One should note that the removal of the "remember_token" field in the users table is not currently handled by this package. Any existing tokens will not transferred automatically. After the migration has been published you can create the token table by running the migrations:
 
 ```bash
 php artisan migrate
