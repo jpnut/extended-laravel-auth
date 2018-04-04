@@ -69,6 +69,7 @@ You should also make sure that the guard is defined on the routes where you wish
 
 Certain other areas of the default Laravel framework also rely upon features which have been changed in this package:
 
+- You should comment out `Illuminate\Auth\Passwords\PasswordResetServiceProvider::class` in `config/app.php`
 - During testing, you should override `Illuminate\Foundation\Testing\TestCase` with `JPNut\ExtendedAuth\Testing\TestCase`
 - For password resets, you should replace `Illuminate\Foundation\Auth\ResetsPasswords` with `JPNut\ExtendedAuth\ResetsPasswords`
 
