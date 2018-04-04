@@ -43,7 +43,7 @@ use JPNut\ExtendedAuth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-	// ...
+    // ...
 }
 ```
 
