@@ -12,7 +12,9 @@ TODO
 
 You can publish the migration with:
 
+```bash
 php artisan vendor:publish --provider="JPNut\ExtendedAuth\AuthServiceProvider" --tag="migrations"
+```
 
 One should note that the removal of the "remember_token" field in the users table is not currently handled by this package. After the migration has been published you can create the token table by running the migrations:
 
@@ -28,7 +30,8 @@ php artisan vendor:publish --provider="JPNut\ExtendedAuth\AuthServiceProvider" -
 
 ## Usage
 
-Since the default auth implementation of "Remember Me" tokens is baked into the `"Illuminate\Contracts\Auth\Authenticatable"` contract, this package overwrites this, and provides an alternative to the `"Illuminate\Foundation\Auth\User"` provided by Laravel. 
+Since the default auth implementation of "Remember Me" tokens is baked into the `"Illuminate\Contracts\Auth\Authenticatable"` contract, this package overwrites this, and provides an alternative to the `"Illuminate\Foundation\Auth\User"` provided by Laravel.
+
 You must ensure that your `User` model(s) implement `"JPNut\ExtendedAuth\Contracts\Authenticatable"`. The easiest way to accomplish this is to extend `"JPNut\ExtendedAuth\User"`:
 
 ```php
