@@ -57,6 +57,13 @@ interface Authenticatable
     public function removeRememberToken($identifier);
 
     /**
+     * Remove all "remember me" tokens.
+     *
+     * @return bool|null
+     */
+    public function removeAllRememberTokens();
+
+    /**
      * Get the name of the relationship where the tokens can be found.
      *
      * @return string

@@ -106,6 +106,19 @@ trait Authenticatable
     }
 
     /**
+     * Remove all "remember me" tokens.
+     *
+     * @return bool|null
+     */
+    public function removeAllRememberTokens()
+    {
+        if ($this->tokenRelationshipIsDefined()) {
+            return $this->{$this->getRememberTokenRelationshipName()}()
+                ->delete();
+        }   
+    }
+
+    /**
      * Get the name of the relationship where the tokens can be found.
      *
      * @return string
