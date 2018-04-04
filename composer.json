@@ -1,0 +1,42 @@
+{
+    "name": "jpnut/extended-laravel-auth",
+    "description": "Extended Authentication implmentation for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamie Nuttall",
+            "email": "nuttalljamie@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0",
+        "illuminate/auth": "~5.5.0|~5.6.0",
+        "illuminate/contracts": "~5.5.0|~5.6.0",
+        "illuminate/database": "~5.5.0|~5.6.0",
+        "illuminate/support": "~5.5.0|~5.6.0",
+        "laravel/framework": "~5.5.0|~5.6.0",
+        "symfony/http-foundation": "~4.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.3.0|~3.4.2|^3.5.0",
+        "phpunit/phpunit" : "^5.7|6.2|^7.0",
+        "mockery/mockery": "~0.9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "JPNut\\ExtendedAuth\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JPNut\\ExtendedAuth\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JPNut\\ExtendedAuth\\AuthServiceProvider"
+            ]
+        }
+    }
+}
