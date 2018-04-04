@@ -4,6 +4,7 @@ namespace JPNut\ExtendedAuth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use JPNut\ExtendedAuth\Passwords\PasswordBrokerManager;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -40,6 +41,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/extended-auth.php', 'extended-auth');
 
+        $this->registerPasswordBrokerManager();
+
         Auth::provider(config('extended-auth.provider'), function ($app, array $config) {
             return new EloquentUserProvider($app['hash'], $config['model']);
         });
@@ -66,5 +69,17 @@ class AuthServiceProvider extends ServiceProvider
 
             return $guard;
         });
+    }
+
+    protected function registerPasswordBrokerManager()
+    {
+        $this->app->singleton('auth.password', function ($app) {
+            return new PasswordBrokerManager($app);
+        });
+    }
+
+    public function provides()
+    {
+        return ['auth.password'];
     }
 }
